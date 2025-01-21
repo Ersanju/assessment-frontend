@@ -1,0 +1,27 @@
+<div class="user-profile">
+  <div class="profile-photo">
+    <img
+      [src]="user.image || 'https://via.placeholder.com/150'"
+      alt="Profile Photo"
+    />
+  </div>
+  <div class="user-details">
+    <h2>{{ user.firstName }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <button (click)="toggleDetails()" class="details-button">
+      {{ showDetails ? "Hide Details" : "Show Details" }}
+    </button>
+
+    <div *ngIf="showDetails" class="extra-details">
+      <p><strong>Address:</strong> {{ user.username }}</p>
+      <p><strong>Company:</strong> {{ user.password || "N/A" }}</p>
+      <p>
+        <strong>BirthDate:</strong>
+        <a [href]="user.website" target="_blank">{{
+          user.birthDate || "N/A"
+        }}</a>
+      </p>
+    </div>
+  </div>
+</div>

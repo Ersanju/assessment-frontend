@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.user-list {
+  max-width: 800px;
+  margin: 30px auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+
+  h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+  }
+
+  pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    button {
+      border: none;
+      border-radius: 5px;
+      padding: 8px 12px;
+      margin: 0 5px;
+      background: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+
+      &:hover {
+        background: #0056b3;
+      }
+
+      &[disabled] {
+        background: #ddd;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

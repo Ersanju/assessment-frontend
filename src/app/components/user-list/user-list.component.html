@@ -1,0 +1,15 @@
+<div class="user-list">
+  <h1>All Users</h1>
+  <div *ngIf="users.length > 0">
+    <div *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+      <app-user [user]="user"></app-user>
+    </div>
+    <pagination-controls 
+      (pageChange)="currentPage = $event" 
+      [autoHide]="true">
+    </pagination-controls>
+  </div>
+  <div *ngIf="!users.length" class="loading">
+    Loading users...
+  </div>
+</div>
