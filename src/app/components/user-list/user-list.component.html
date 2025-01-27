@@ -1,5 +1,26 @@
 <div class="user-list">
   <h1 class="title"><strong>User's List</strong></h1>
+
+  <!-- Sort Dropdown -->
+  <div class="mb-3">
+    <label for="sortOrder" class="form-label">Sort by Age:   </label>
+    <select id="sortOrder" class="form-select" (change)="onSortOrderChange($event)">
+      <option value="" selected>Default</option>
+      <option value="asc">Ascending</option>
+      <option value="desc">Descending</option>
+    </select>
+  </div>
+
+  <!-- Role Filter Dropdown -->
+  <div class="mb-3">
+    <label for="roleFilter" class="form-label">Filter by Role: </label>
+    <select id="roleFilter" class="form-select" (change)="onRoleFilterChange($event)">
+      <option value="">All Roles</option>
+      <option value="admin">Admin</option>
+      <option value="moderator">Moderator</option>
+      <option value="user">User</option>
+    </select>
+  </div>
   <div *ngIf="users.length > 0">
     <div *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
       <app-user [user]="user"></app-user>
