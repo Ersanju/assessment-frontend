@@ -7,12 +7,14 @@ import { UserComponent } from './components/user/user.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     UserListComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

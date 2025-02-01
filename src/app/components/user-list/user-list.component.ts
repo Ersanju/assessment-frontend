@@ -1,17 +1,17 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
+import { HttpClient } from "@angular/common/http";
+import { Component } from "@angular/core";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  selector: "app-user-list",
+  templateUrl: "./user-list.component.html",
+  styleUrls: ["./user-list.component.scss"],
 })
 export class UserListComponent {
   users: any[] = [];
   originalUsers: any[] = [];
-  sortOrder: string = '';
-  selectedRole: string = '';
+  sortOrder: string = "";
+  selectedRole: string = "";
   currentPage: number = 1; // Tracks the current page
   itemsPerPage: number = 5; // Number of items per page
 
@@ -29,13 +29,15 @@ export class UserListComponent {
 
     // Apply role filter
     if (this.selectedRole) {
-      filteredUsers = filteredUsers.filter(user => user.role === this.selectedRole);
+      filteredUsers = filteredUsers.filter(
+        (user) => user.role === this.selectedRole
+      );
     }
 
     // Sort users based on selected sort order
-    if (this.sortOrder === 'asc') {
+    if (this.sortOrder === "asc") {
       filteredUsers = filteredUsers.sort((a, b) => a.age - b.age);
-    } else if (this.sortOrder === 'desc') {
+    } else if (this.sortOrder === "desc") {
       filteredUsers = filteredUsers.sort((a, b) => b.age - a.age);
     }
 
@@ -51,5 +53,4 @@ export class UserListComponent {
     this.selectedRole = (event.target as HTMLSelectElement).value;
     this.sortUsers();
   }
-
 }

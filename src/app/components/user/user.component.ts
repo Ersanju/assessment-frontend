@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-user",
@@ -6,10 +7,11 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent {
-  @Input() user: any;
-  showDetails: boolean = false; // Flag to toggle details view
 
-  toggleDetails(): void {
-    this.showDetails = !this.showDetails;
+  constructor(private router: Router) {}
+  @Input() user: any;
+
+  showDetails(userId: number) {
+    this.router.navigate(['/user-details', userId]);
   }
 }

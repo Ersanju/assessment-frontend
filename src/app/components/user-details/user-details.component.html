@@ -1,0 +1,76 @@
+<button [routerLink]="['/users']" routerLinkActive="router-link-active">
+  back
+</button><br>
+<h1 class="user-name">{{ user.firstName }}'s Details</h1>
+<div class="user-profile">
+  <div class="profile-photo">
+    <img
+      [src]="user.image || 'https://via.placeholder.com/150'"
+      alt="Profile Photo"
+    />
+  </div>
+  <div class="user-details">
+    <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <p><strong>Role:</strong> {{user.role}} </p>
+  </div>
+</div>
+<div class="extra-details">
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Id: </strong>{{ user.id }}</p>
+      <p><strong>Age:</strong> {{ user.age }}</p>
+      <p><strong>Gender:</strong> {{ user.gender }}</p>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Password:</strong> {{ user.password }}</p>
+      <p><strong>Birth Date:</strong> {{ user.birthDate }}</p>
+      <p><strong>Blood Group:</strong> {{ user.bloodGroup }}</p>
+      <p><strong>Height:</strong> {{ user.height }}</p>
+      <p><strong>Weight:</strong> {{ user.weight }}</p>
+      <p><strong>Eye Color:</strong> {{ user.eyeColor }}</p>
+      <p>
+        <strong>Hair:</strong> Color - {{ user.hair.color }}, Type -
+        {{ user.hair.type }}
+      </p>
+      <p><strong>IP Address:</strong> {{ user.ip }}</p>
+      <p>
+        <strong>Address:</strong>
+        {{ user.address.address }}, {{ user.address.city }},
+        {{ user.address.state }} {{ user.address.stateCode }},
+        {{ user.address.postalCode }}, Coordinates: ({{
+          user.address.coordinates.lat
+        }}, {{ user.address.coordinates.lng }}), {{ user.address.country }}
+      </p>
+      <p><strong>MAC Address:</strong> {{ user.macAddress }}</p>
+      <p><strong>University:</strong> {{ user.university }}</p>
+      <p>
+        <strong>Bank:</strong>
+        Expiry: {{ user.bank.cardExpire }} ending in
+        {{ user.bank.cardNumber.slice(-4) }}<br />
+        {{ user.bank.cardType }}, Currency: {{ user.bank.currency }}, iban:
+        {{ user.bank.iban }}
+      </p>
+      <p>
+        <strong>Company:</strong>
+        {{ user.company.name }} ({{ user.company.department }})<br />
+        Title: {{ user.company.title }}<br />
+        Address: {{ user.company.address.address }},
+        {{ user.company.address.city }}, {{ user.company.address.state }}
+        {{ user.company.address.stateCode }},
+        {{ user.company.address.postalCode }}, Coordinates: ({{
+          user.company.address.coordinates.lat
+        }}, {{ user.company.address.coordinates.lng }}),
+        {{ user.company.address.country }}
+      </p>
+      <p><strong>EIN:</strong> {{ user.ein }}</p>
+      <p><strong>SSN:</strong> {{ user.ssn }}</p>
+      <p><strong>User Agent</strong> {{ user.userAgent }}</p>
+      <p>
+        <strong>Crypto:</strong> {{ user.crypto.coin }} on
+        {{ user.crypto.network }}<br />
+        Wallet: {{ user.crypto.wallet }}
+      </p>
+    </div>
+  </div>
+</div>

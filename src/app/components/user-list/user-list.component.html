@@ -3,8 +3,12 @@
 
   <!-- Sort Dropdown -->
   <div class="mb-3">
-    <label for="sortOrder" class="form-label">Sort by Age:   </label>
-    <select id="sortOrder" class="form-select" (change)="onSortOrderChange($event)">
+    <label for="sortOrder" class="form-label">Sort by Age: </label>
+    <select
+      id="sortOrder"
+      class="form-select"
+      (change)="onSortOrderChange($event)"
+    >
       <option value="" selected>Default</option>
       <option value="asc">Ascending</option>
       <option value="desc">Descending</option>
@@ -14,7 +18,11 @@
   <!-- Role Filter Dropdown -->
   <div class="mb-3">
     <label for="roleFilter" class="form-label">Filter by Role: </label>
-    <select id="roleFilter" class="form-select" (change)="onRoleFilterChange($event)">
+    <select
+      id="roleFilter"
+      class="form-select"
+      (change)="onRoleFilterChange($event)"
+    >
       <option value="">All Roles</option>
       <option value="admin">Admin</option>
       <option value="moderator">Moderator</option>
@@ -22,15 +30,16 @@
     </select>
   </div>
   <div *ngIf="users.length > 0">
-    <div *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+    <div
+      *ngFor="
+        let user of users
+          | paginate : { itemsPerPage: itemsPerPage, currentPage: currentPage }
+      "
+    >
       <app-user [user]="user"></app-user>
     </div>
-    <pagination-controls 
-      (pageChange)="currentPage = $event" 
-      [autoHide]="true">
+    <pagination-controls (pageChange)="currentPage = $event" [autoHide]="true">
     </pagination-controls>
   </div>
-  <div *ngIf="!users.length" class="loading">
-    Loading users...
-  </div>
+  <div *ngIf="!users.length" class="loading">Loading users...</div>
 </div>

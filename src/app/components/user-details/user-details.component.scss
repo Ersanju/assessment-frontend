@@ -1,0 +1,121 @@
+button {
+  background-color: #28a745; // Green color
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 15px; // Added margin at the top
+
+  &:hover {
+    background-color: #218838; // Darker green on hover
+    transform: scale(1.05);
+  }
+
+  &:active {
+    background-color: #1e7e34;
+    transform: scale(1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+  }
+}
+
+.user-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333; // Changed to a dark gray for better readability
+  background: #e6f7ff; // Light blue background
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: block;
+  margin: 0 auto; // Centers the text
+  width: fit-content;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  background-color: #f6f3f6;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin-top: 20px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+  .details-button {
+    background-color: #e4e4e9;
+  }
+
+  .profile-photo {
+    margin-right: 20px;
+
+    img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 2px solid #007bff;
+    }
+  }
+
+  .user-details {
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #343a40;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #6c757d;
+
+      strong {
+        color: #495057;
+      }
+    }
+  }
+}
+// Extra Details Section
+.extra-details {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+
+  .card {
+    margin-bottom: 10px;
+
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        font-size: 14px;
+        margin: 0;
+        strong {
+          color: #333;
+        }
+      }
+    }
+  }
+}
